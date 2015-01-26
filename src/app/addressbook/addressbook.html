@@ -1,3 +1,31 @@
-<div class="container">
-  AddressBook - {{vm.title}}
+<div class="pb-wrapper">
+  <div class="container">
+
+    <div class="well">
+      {{ vm.title }}
+    </div>
+
+    <table class="table table-hover" ng-hide="!vm.addresses.length">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tr data-ng-repeat="a in vm.addresses">
+        <td>{{ a.id }}</td>
+        <td>{{ a.firstName }} {{ a.lastName }}</td>
+        <td>{{ a.email }}</td>
+        <td>
+          <div data-pb-widget-address-actions></div>
+        </td>
+      </tr>
+    </table>
+
+    <a class="btn btn-info" ng-href="#/addressbook/add">Add</a>
+
+  </div>
 </div>

@@ -9,14 +9,19 @@
   function AddressBook() {
     /*jshint validthis: true */
     var vm = this;
-    vm.avengers = [];
+    vm.addresses = [];
     vm.title = 'AddressBook';
 
     activate();
     ///////////////////////
 
     function activate() {
-
+      vm.addresses.push({
+        id: 1,
+        firstName: 'John',
+        lastName: 'Papa',
+        email: 'jpapa@gmail.com'
+      });
     }
   }
 

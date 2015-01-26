@@ -11,6 +11,11 @@
         templateUrl: 'app/addressbook/addressbook.html',
         controller: 'AddressBook',
         controllerAs: 'vm'
+      })
+      .when('/addressbook/add', {
+        templateUrl: 'app/addressbook/addressbook-form.html',
+        controller: 'AddressBookEdit',
+        controllerAs: 'vm'
       });
   }
 
