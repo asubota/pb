@@ -12,3 +12,7 @@ body {
 
 // injector
 // endinjector
+
+.ng-enter {
+  animation: fadeIn 0.3s;
+}
