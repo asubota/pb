@@ -21,10 +21,19 @@
       ///////////////////////
 
       function save(item) {
-        var id = (new Date()).getTime();
-        item.id = id;
+        var date = new Date();
 
-        return $q.when(localStorageService.set(id, item));
+        if (!item.id) {
+          item.id = date.getTime();
+        }
+
+        if (!item.createdAt) {
+          item.createdAt = date.getTime();
+        }
+
+        item.updatedAt = date.getTime();
+
+        return $q.when(localStorageService.set(item.id, item));
       }
 
       function _get(id) {
@@ -32,7 +41,7 @@
       }
 
       function get(id) {
-        return $q.when(_get);
+        return $q.when(_get(id));
       }
 
       function remove(id) {

@@ -1,32 +1,30 @@
-<div class="pb-wrapper">
-  <div class="container">
-
-    <div class="well">
-      {{ vm.title }}
-    </div>
-
-    <a class="btn btn-info" ng-href="#/addressbook/add">Add</a>
-    <a class="btn btn-danger" ng-click="vm.clear()">Clear</a>
-
-    <table class="table table-hover" ng-hide="!vm.addresses.length">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-
-      <tr data-ng-repeat="a in vm.addresses">
-        <td>{{ $index + 1 }}</td>
-        <td>{{ a.firstName }} {{ a.lastName }}</td>
-        <td>{{ a.email }}</td>
-        <td>
-          <div data-pb-widget-address-actions></div>
-        </td>
-      </tr>
-    </table>
-
-  </div>
+<div class="well">
+  {{ vm.title }}
 </div>
+
+<a class="btn btn-info" ng-href="#/addressbook/edit">Add</a>
+<a class="btn btn-danger" ng-click="vm.clear()" ng-hide="!vm.addresses.length">Clear</a>
+
+<hr />
+
+<table class="table table-hover" ng-hide="!vm.addresses.length">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tr data-ng-repeat="a in vm.addresses">
+    <td>{{ $index + 1 }}</td>
+    <td>{{ a.firstName }} {{ a.lastName }}</td>
+    <td>{{ a.email }}</td>
+    <td>
+      <div data-pb-widget-address-actions></div>
+    </td>
+  </tr>
+</table>
+
+<hr />

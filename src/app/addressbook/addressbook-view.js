@@ -3,20 +3,20 @@
 
   angular
     .module('app.addressbook')
-    .controller('AddressBookEdit', AddressBookEdit);
+    .controller('AddressBookView', AddressBookView);
 
   /* @ngInject */
-  function AddressBookEdit(dataservice, $location, $routeParams) {
+  function AddressBookView(dataservice, $routeParams) {
     /*jshint validthis: true */
     var vm = this;
-    vm.title = 'AddressBookEdit';
-
+    vm.title = 'AddressBookView';
     vm.id = '';
     vm.email = '';
     vm.firstName = '';
     vm.lastName = '';
+    vm.lastName = '';
     vm.createdAt = '';
-    vm.save = save;
+    vm.updatedAt = '';
 
     activate();
 
@@ -34,25 +34,9 @@
       }
 
       function succeed(data) {
-        ['id', 'email', 'firstName', 'lastName', 'createdAt'].forEach(function(key) {
+        ['id', 'email', 'firstName', 'lastName', 'createdAt', 'updatedAt'].forEach(function(key) {
           vm[key] = data[key];
         });
-      }
-    }
-
-    function save() {
-      var item = {
-        id: vm.id,
-        email: vm.email,
-        firstName: vm.firstName,
-        lastName: vm.lastName,
-        createdAt: vm.createdAt
-      };
-
-      dataservice.save(item).then(succeed);
-
-      function succeed() {
-        $location.path('/addressbook');
       }
     }
   }

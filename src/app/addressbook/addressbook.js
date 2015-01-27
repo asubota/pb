@@ -13,7 +13,6 @@
     vm.title = 'AddressBook';
     vm.remove = remove;
     vm.clear = clear;
-
     activate();
 
     ///////////////////////

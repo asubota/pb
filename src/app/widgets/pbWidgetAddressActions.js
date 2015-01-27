@@ -7,8 +7,8 @@
 
   function pbWidgetAddressActions() {
     var directive = {
-      replace: true,
-      template: '<a class="btn btn-danger btn-xs" ng-click="vm.remove(a.id, $index)">X</a>'
+      restrict: 'EA',
+      templateUrl: '/app/widgets/widget-actions.html',
     };
 
     return directive;

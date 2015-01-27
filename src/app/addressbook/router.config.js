@@ -6,17 +6,23 @@
 
   /* @ngInject */
   function RouteConfig($routeProvider) {
-    $routeProvider.
-      when('/addressbook', {
+    $routeProvider
+      .when('/addressbook', {
         templateUrl: 'app/addressbook/addressbook.html',
         controller: 'AddressBook',
         controllerAs: 'vm'
       })
-      .when('/addressbook/add', {
-        templateUrl: 'app/addressbook/addressbook-form.html',
+      .when('/addressbook/edit/:id?', {
+        templateUrl: 'app/addressbook/addressbook-edit.html',
         controller: 'AddressBookEdit',
         controllerAs: 'vm'
-      });
+      })
+      .when('/addressbook/:id', {
+        templateUrl: 'app/addressbook/addressbook-view.html',
+        controller: 'AddressBookView',
+        controllerAs: 'vm'
+      })
+      ;
   }
 
 })();

@@ -13,7 +13,7 @@
         'field': '@',
         'type': '@'
       },
-      link: function(scope, element) {
+      link: function(scope /*, element */) {
         scope.id = scope.field.toLowerCase().replace(/[^\da-z]/g, '_');
         scope.type = scope.type ? scope.type : 'text';
       },

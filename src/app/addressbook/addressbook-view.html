@@ -1,0 +1,17 @@
+<div class="well">
+  {{ vm.title }}
+</div>
+
+<a class="btn btn-info" ng-href="#/addressbook">Back</a>
+
+<hr />
+
+<ul class="list-group">
+  <div pb-widget-address-view title="First Name" value="vm.firstName"></div>
+  <div pb-widget-address-view title="Last Name" value="vm.lastName"></div>
+  <div pb-widget-address-view title="Email" value="vm.email"></div>
+  <div pb-widget-address-view title="Updated" value="vm.updatedAt | date:'medium'"></div>
+  <div pb-widget-address-view title="Created" value="vm.createdAt | date:'medium'"></div>
+</ul>
+
+<hr />
