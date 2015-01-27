@@ -2,18 +2,10 @@
   'use strict';
 
   angular.module('app.core', [
-    /*
-     * Angular modules
-     */
+
     'ngAnimate', 'ngRoute', 'ngSanitize',
 
-    /*
-     * Our reusable cross app code modules
-     */
+    'ui.bootstrap', 'LocalStorageModule'
 
-    /*
-     * 3rd Party modules
-     */
-     'ui.bootstrap'
   ]);
 })();

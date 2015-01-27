@@ -5,14 +5,14 @@
       {{ vm.title }}
     </div>
 
+    <a class="btn btn-info" ng-href="#/addressbook">Back</a>
+    <a class="btn btn-info" ng-click="vm.save()">Save</a>
+
     <form class="form-horizontal">
       <div data-pb-widget-input field="First Name" model="vm.firstName"></div>
       <div data-pb-widget-input field="Last Name" model="vm.lastName"></div>
       <div data-pb-widget-input field="Email" model="vm.email" type="email"></div>
     </form>
-
-    <a class="btn btn-info" ng-href="#/addressbook">Back</a>
-    <a class="btn btn-info" ng-click="vm.save()">Save</a>
 
   </div>
 </div>
