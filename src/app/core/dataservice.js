@@ -12,7 +12,8 @@
           save: save,
           get: get,
           remove: remove,
-          query: query
+          query: query,
+          clear: clear
       };
 
       return service;
@@ -21,23 +22,33 @@
 
       function save(item) {
         var id = (new Date()).getTime();
-        return localStorageService.set(id, item);
+        item.id = id;
+
+        return $q.when(localStorageService.set(id, item));
       }
 
-      function get(id) {
+      function _get(id) {
         return localStorageService.get(id);
       }
 
+      function get(id) {
+        return $q.when(_get);
+      }
+
       function remove(id) {
-        return localStorageService.remove(id);
+        return $q.when(localStorageService.remove(id));
       }
 
       function query() {
-        var ids = localStorageService.keys();
-        var data = [];
+        var data = localStorageService.keys().map(_get);
 
-        console.log(ids);
         return $q.when(data);
+      }
+
+      function clear() {
+        localStorageService.clearAll();
+
+        return $q.when(query);
       }
     }
 })();

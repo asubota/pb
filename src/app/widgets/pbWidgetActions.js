@@ -8,7 +8,7 @@
   function pbWidgetAddressActions() {
     var directive = {
       replace: true,
-      template: '<a class="btn btn-danger btn-xs" ng-href="#/addressbook/delete/{{a.id}}">X</a>'
+      template: '<a class="btn btn-danger btn-xs" ng-click="vm.remove(a.id, $index)">X</a>'
     };
 
     return directive;
