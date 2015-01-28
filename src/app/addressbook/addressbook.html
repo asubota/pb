@@ -3,7 +3,7 @@
 </div>
 
 <a class="btn btn-info" ng-href="#/addressbook/edit">Add</a>
-<a class="btn btn-danger" ng-click="vm.clear()" ng-hide="!vm.addresses.length">Clear</a>
+<a class="btn btn-danger" ng-hide="!vm.addresses.length" pb-confirm-message="Are you sure?" pb-confirm="vm.clear()">Clear</a>
 
 <hr />
 
