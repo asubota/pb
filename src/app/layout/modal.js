@@ -10,7 +10,6 @@
       restrict: 'A',
       scope: {
         pbConfirm:'&',
-        item:'='
       },
       link: linkFunction
     };
@@ -25,14 +24,15 @@
           controllerAs: 'vm',
           controller: function() {
             var vm = this;
-
             vm.message = message;
+            vm.ok = ok;
+            vm.cancel = cancel;
 
-            vm.ok = function() {
+            function k() {
               modalInstance.close();
             };
 
-            vm.cancel = function() {
+            function cancel() {
               modalInstance.dismiss('cancel');
             };
           }
