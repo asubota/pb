@@ -3,6 +3,10 @@
 ### Installation
 
 Install the required tools: `yo`, `gulp`, `bower`
+```
+npm install -g yo bower gulp
+```
+
 
 Install `npm packages`:
 ```
