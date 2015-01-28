@@ -8,7 +8,7 @@
   function pbWidgetAddressActions() {
     var directive = {
       restrict: 'EA',
-      templateUrl: '/app/widgets/widget-actions.html',
+      templateUrl: 'app/widgets/widget-actions.html',
     };
 
     return directive;

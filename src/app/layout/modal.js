@@ -20,9 +20,22 @@
         var message = attrs.pbConfirmMessage || 'Are you sure ?';
 
         var modalInstance = $modal.open({
-          templateUrl: '/app/layout/modal.html',
+          templateUrl: 'app/layout/modal.html',
           size: 'sm',
-          controller: ModalInstance
+          controllerAs: 'vm',
+          controller: function() {
+            var vm = this;
+
+            vm.message = message;
+
+            vm.ok = function() {
+              modalInstance.close();
+            };
+
+            vm.cancel = function() {
+              modalInstance.dismiss('cancel');
+            };
+          }
         });
 
         modalInstance.result.then(function() {
@@ -31,18 +44,6 @@
 
         });
       });
-    }
-
-    function ModalInstance($scope, $modalInstance) {
-      $scope.ok = function() {
-        console.log($scope);
-
-        $modalInstance.close();
-      };
-
-      $scope.cancel = function() {
-        $modalInstance.dismiss('cancel');
-      };
     }
 
     return directive;
