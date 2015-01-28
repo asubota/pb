@@ -2,8 +2,10 @@
   {{ vm.title }}
 </div>
 
-<a class="btn btn-info" ng-href="#/addressbook">Back</a>
-<a class="btn btn-success" ng-click="vm.save()">Save</a>
+<span ng-include="'/app/components/back-button.html'"></span>
+<a class="btn btn-success" ng-click="vm.save()">
+  <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Save
+</a>
 
 <hr />
 

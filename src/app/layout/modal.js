@@ -28,13 +28,13 @@
             vm.ok = ok;
             vm.cancel = cancel;
 
-            function k() {
+            function ok() {
               modalInstance.close();
-            };
+            }
 
             function cancel() {
               modalInstance.dismiss('cancel');
-            };
+            }
           }
         });
 

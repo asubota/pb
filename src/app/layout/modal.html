@@ -5,6 +5,10 @@
   {{vm.message}}
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="vm.ok()">OK</button>
-  <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+  <a class="btn btn-primary" ng-click="vm.ok()">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ok
+  </a>
+  <a class="btn btn-warning" ng-click="vm.cancel()">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
+  </a>
 </div>

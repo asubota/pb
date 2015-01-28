@@ -2,8 +2,12 @@
   {{ vm.title }}
 </div>
 
-<a class="btn btn-info" ng-href="#/addressbook/edit">Add</a>
-<a class="btn btn-danger" ng-hide="!vm.addresses.length" pb-confirm-message="Are you sure?" pb-confirm="vm.clear()">Clear</a>
+<a class="btn btn-info" ng-href="#/addressbook/edit">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+</a>
+<a class="btn btn-danger" ng-hide="!vm.addresses.length" pb-confirm-message="Are you sure?" pb-confirm="vm.clear()">
+  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Clear
+</a>
 
 <hr />
 
