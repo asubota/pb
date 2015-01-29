@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('app.layout')
+  angular.module('app.widgets')
     .directive('pbConfirm', pbConfirm);
 
   /* @ngInject */
@@ -19,7 +19,7 @@
         var message = attrs.pbConfirmMessage || 'Are you sure ?';
 
         var modalInstance = $modal.open({
-          templateUrl: 'app/layout/modal.html',
+          templateUrl: 'app/widgets/pb-widget-confirm.html',
           size: 'sm',
           controllerAs: 'vm',
           controller: function() {

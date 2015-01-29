@@ -11,6 +11,13 @@
 
 <hr />
 
+<div class="input-group">
+  <span class="input-group-addon">
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  </span>
+  <input type="text" class="form-control" placeholder="Search..." data-ng-model="vm.search">
+</div>
+
 <table class="table table-hover" ng-hide="!vm.addresses.length">
   <thead>
     <tr>
@@ -21,12 +28,12 @@
     </tr>
   </thead>
 
-  <tr data-ng-repeat="a in vm.addresses">
+  <tr data-ng-repeat="a in vm.addresses | filter:vm.search " >
     <td>{{ $index + 1 }}</td>
     <td>{{ a.firstName }} {{ a.lastName }}</td>
     <td>{{ a.email }}</td>
     <td>
-      <div data-pb-widget-address-actions></div>
+      <div ng-include="'/app/components/address-actions.html'"></div>
     </td>
   </tr>
 </table>
