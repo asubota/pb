@@ -29,3 +29,13 @@ Build:
 ```
 gulp
 ```
+
+Unit tests:
+```
+gulp test
+```
+
+E2E tests:
+```
+gulp protractor
+```
