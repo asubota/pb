@@ -1,0 +1,12 @@
+
+<a class="btn btn-success pb-view-item-{{ a.id }} btn-xs" ng-href="#/addressbook/{{ a.id }}">
+  <span class="glyphicon glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+</a>
+
+<a class="btn btn-primary btn-xs pb-edit-item-{{ a.id }}" ng-href="#/addressbook/edit/{{ a.id }}">
+  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+</a>
+
+<a class="btn btn-danger btn-xs pb-remove-item-{{ a.id }}" pb-confirm="vm.remove(a.id, $index)" pb-confirm-message="Are you sure?">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</a>

@@ -1,0 +1,41 @@
+<div class="well">
+  {{ vm.title }}
+</div>
+
+<a class="btn btn-info pb-add" ng-href="#/addressbook/edit">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+</a>
+<a class="btn btn-danger pb-clear" ng-hide="!vm.addresses.length" pb-confirm-message="Are you sure?" pb-confirm="vm.clear()">
+  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Clear
+</a>
+
+<hr />
+
+<div class="input-group">
+  <span class="input-group-addon">
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  </span>
+  <input type="text" class="form-control" placeholder="Search..." data-ng-model="vm.search">
+</div>
+
+<table class="table table-hover" ng-hide="!vm.addresses.length">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tr data-ng-repeat="a in vm.addresses | filter:vm.search " >
+    <td>{{ $index + 1 }}</td>
+    <td><span class="pb-name">{{ a.firstName }} {{ a.lastName }}</span></td>
+    <td><span class="pb-email">{{ a.email }}</span></td>
+    <td>
+      <div ng-include="'/app/components/address-actions.html'"></div>
+    </td>
+  </tr>
+</table>
+
+<hr />
