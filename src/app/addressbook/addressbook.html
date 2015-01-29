@@ -9,9 +9,9 @@
   <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Clear
 </a>
 
-<hr />
+<hr ng-hide="!vm.addresses.length" />
 
-<div class="input-group">
+<div class="input-group" ng-hide="!vm.addresses.length">
   <span class="input-group-addon">
     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
   </span>
@@ -38,4 +38,4 @@
   </tr>
 </table>
 
-<hr />
+<hr ng-hide="!vm.addresses.length" />
