@@ -49,18 +49,25 @@ describe('The add view', function() {
 
         firstName.sendKeys('firstName');
         lastName.sendKeys('lastName');
-        email.sendKeys('asubota@cogniance.com');
+        email.sendKeys('email@example.com');
 
         save.click();
         expect(browser.getCurrentUrl()).toMatch(/\/addressbook/);
 
         list = element.all(by.repeater('a in vm.addresses'));
         expect(list.count()).toEqual(1);
+
+        element.all(by.repeater('a in vm.addresses')).then(function(rows) {
+          var _email = rows[0].element(by.css('.pb-email'));
+          var _name  = rows[0].element(by.css('.pb-name'));
+
+          expect(_email.getText()).toEqual('email@example.com');
+          expect(_name.getText()).toEqual('firstName lastName');
+        });
+
       });
     });
   });
-
-
 
 });
 

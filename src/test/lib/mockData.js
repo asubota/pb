@@ -7,21 +7,21 @@ var mockData = (function() {
     return [
       {
         id: 1,
-        firstName: 'Alex1',
-        lastName: 'Subota1',
-        email: 'asubota1@cogniance.com'
+        firstName: 'firstName1',
+        lastName: 'lastName1',
+        email: 'email1@example.com'
       },
       {
         id: 1,
-        firstName: 'Alex2',
-        lastName: 'Subota2',
-        email: 'asubota2@cogniance.com'
+        firstName: 'firstName2',
+        lastName: 'lastName2',
+        email: 'email1@example.com'
       },
       {
         id: 1,
-        firstName: 'Alex3',
-        lastName: 'Subota3',
-        email: 'asubota3@cogniance.com'
+        firstName: 'firstName3',
+        lastName: 'lastName3',
+        email: 'email1@example.com'
       },
     ];
   }
