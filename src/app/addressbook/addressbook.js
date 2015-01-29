@@ -14,6 +14,8 @@
     vm.remove = remove;
     vm.clear = clear;
     vm.search = '';
+    vm.sortOrder = true;
+    vm.sortField = '';
     activate();
 
     ///////////////////////

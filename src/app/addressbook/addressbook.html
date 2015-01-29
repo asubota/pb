@@ -22,13 +22,13 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Name</th>
-      <th>Email</th>
+      <th><a class="pb-sortlink" ng-click="vm.sortField='firstName'; vm.sortOrder=!vm.sortOrder;">Name</a</th>
+      <th><a class="pb-sortlink" ng-click="vm.sortField='email'; vm.sortOrder=!vm.sortOrder;">Email</a></th>
       <th>Actions</th>
     </tr>
   </thead>
 
-  <tr data-ng-repeat="a in vm.addresses | filter:vm.search " >
+  <tr data-ng-repeat="a in vm.addresses | filter:vm.search | orderBy:vm.sortField:vm.sortOrder" >
     <td>{{ $index + 1 }}</td>
     <td><span class="pb-name">{{ a.firstName }} {{ a.lastName }}</span></td>
     <td><span class="pb-email">{{ a.email }}</span></td>
