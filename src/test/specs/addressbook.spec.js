@@ -31,16 +31,28 @@ describe('app.addressbook', function() {
         expect(controller.title).to.equal('AddressBook');
       });
 
-      it('should have clear function', function () {
-          expect(controller.clear).to.be.defined;
+      it('should have 3 items', function() {
+        expect(controller.addresses).to.have.length(3);
       });
 
       it('should have remove function', function () {
-          expect(controller.remove).to.be.defined;
+        expect(controller.remove).to.be.defined;
+
+        xdescribe('execution', function() {
+          it('should have 2 items', function() {
+
+          });
+        });
       });
 
-      it('should have 3 items', function() {
-         expect(controller.addresses).to.have.length(3);
+      it('should have clear function', function () {
+          expect(controller.clear).to.be.defined;
+
+        xdescribe('execution', function() {
+          it('should have 0 items', function() {
+
+          });
+        });
       });
     });
   });

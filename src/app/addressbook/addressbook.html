@@ -5,7 +5,7 @@
 <a class="btn btn-info pb-add" ng-href="#/addressbook/edit">
   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
 </a>
-<a class="btn btn-danger" ng-hide="!vm.addresses.length" pb-confirm-message="Are you sure?" pb-confirm="vm.clear()">
+<a class="btn btn-danger pb-clear" ng-hide="!vm.addresses.length" pb-confirm-message="Are you sure?" pb-confirm="vm.clear()">
   <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Clear
 </a>
 
@@ -30,8 +30,8 @@
 
   <tr data-ng-repeat="a in vm.addresses | filter:vm.search " >
     <td>{{ $index + 1 }}</td>
-    <td>{{ a.firstName }} {{ a.lastName }}</td>
-    <td>{{ a.email }}</td>
+    <td><span class="pb-name">{{ a.firstName }} {{ a.lastName }}</span></td>
+    <td><span class="pb-email">{{ a.email }}</span></td>
     <td>
       <div ng-include="'/app/components/address-actions.html'"></div>
     </td>

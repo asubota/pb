@@ -6,7 +6,7 @@
 'use strict';
 
 var MainPage = function() {
-  this.btnAdd = element(by.css('.pb-add'));
+
 };
 
 module.exports = new MainPage();
