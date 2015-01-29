@@ -21,7 +21,7 @@ function runProtractor (done) {
     }))
     .on('error', function (err) {
       // Make sure failed tests cause gulp to exit non-zero
-      throw err;
+      // throw err;
     })
     .on('end', function () {
       // Close browser sync server

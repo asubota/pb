@@ -5,13 +5,18 @@ module.exports = function(config) {
   config.set({
     autoWatch : false,
 
-    frameworks: ['jasmine'],
+    frameworks: ['sinon', 'mocha', 'chai'],
 
     browsers : ['PhantomJS'],
 
+    reporters: ['mocha'],
+
     plugins : [
-        'karma-phantomjs-launcher',
-        'karma-jasmine'
-    ]
+      'karma-phantomjs-launcher',
+      'karma-sinon',
+      'karma-mocha',
+      'karma-chai',
+      'karma-mocha-reporter'
+    ],
   });
 };
